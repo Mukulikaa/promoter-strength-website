@@ -1,0 +1,44 @@
+/* colors
+1a1a2e = rgba(26, 26, 46, 1)
+16213e = rgba(22, 33, 62, 1)
+0f3460 = rgba(15, 52, 96, 1)
+e94560 = rgba(233, 69, 96, 1)
+*/
+
+body{
+    background-color: rgba(26, 26, 46, 1) !important;
+    height: 100%;
+}
+
+.row{
+    justify-content: center;
+}
+
+.col{
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+.hero{
+    color: rgba(233, 69, 96, 1);
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.results{
+    color: rgba(233, 69, 96, 1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.submit-button{
+    background-color: rgba(15, 52, 96, 1);
+}
+
+#jscharts{
+    width: 90%;
+    height: 400px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(22, 33, 62, 1);
+}
