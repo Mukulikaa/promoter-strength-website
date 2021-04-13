@@ -24,12 +24,10 @@
                             {{ form.csrf_token }}
                             <div class="promoter-input" id="select-yes">
                                 {{ form.epd_name.label }}
-                                <br>
                                 {{ form.epd_name }}
                             </div><br>
                             <div class="promoter-input" id="select-no">
                                 {{ form.nucleotide.label }}
-                                <br>
                                 {{ form.nucleotide }} 
                             </div><br>
                             {{ form.submit }}
@@ -38,6 +36,18 @@
                 </div>
             </div>
         </div><br><br>
+        <div class="container results">
+            <div class="row">
+                <div class="col">
+                    <h1>Results</h1>
+                    <h5>Your promoter sequence: {{ results[0] }}</h5>
+                    <h5>Raw promoter score: {{ results[1] }} </h5>
+                    <h5>Promoter score normalized by TDH3: {{ results[2] }} </h5><br>
+                    <canvas id="chart"></canvas><br><br>
+                    <div id="chart1"></div>
+                </div>
+            </div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>

@@ -2,6 +2,8 @@ from flask import (Flask, url_for,
     render_template,
     redirect)
 from forms import InputForm
+from terminal_app import do_stuff
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
@@ -10,11 +12,17 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 def index():
     form = InputForm()
     if form.validate_on_submit():
-        data = form.epd_name.data
+        if (form.epd_name.data):
+            data = form.epd_name.data
+            results = do_stuff('y', data)
+        elif(form.nucleotide.data):
+            data = form.nucleotide.data
+            results = do_stuff('n', data)
         return render_template(
-        "index.html",
-        form=form,
-        data=data)
+            "result.html",
+            form=form,
+            data=data,
+            results=results)
     return render_template(
         "index.html",
         form=form)

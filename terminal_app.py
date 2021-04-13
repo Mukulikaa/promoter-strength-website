@@ -48,8 +48,8 @@ def do_stuff(param1, param2):
 
 	userscore = calculate_score(userseq, pssm)
 	#print("\n------------- Results -------------")
-	#print("Your promoter sequence was: " + userseq)
-	#print("Raw promoter score:", userscore)
+	print("Your promoter sequence was: " + userseq)
+	print("Raw promoter score:", userscore)
 	#print("Promoter score normalized by TDH3:", userscore/TDH3score)
 	return userseq, userscore, userscore/TDH3score
 
