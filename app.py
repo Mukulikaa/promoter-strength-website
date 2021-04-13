@@ -10,7 +10,11 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 def index():
     form = InputForm()
     if form.validate_on_submit():
-        return "Success"
+        data = form.epd_name.data
+        return render_template(
+        "index.html",
+        form=form,
+        data=data)
     return render_template(
         "index.html",
         form=form)

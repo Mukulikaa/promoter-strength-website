@@ -99,9 +99,25 @@ function makeHistogram(x){
   var trace = {
     x: x,
     type: 'histogram',
+      marker: {
+        color: 'rgb(242, 141, 158)',
+    }
   };
+
+  var layout = {
+    title: {
+      text:'Frequency Distribution',
+      font: {
+        color: 'rgba(233, 69, 96, 1)'
+      }},
+    bargap: 0.01,
+    plot_bgcolor:"rgba(22, 33, 62, 1);",
+    paper_bgcolor:" rgba(22, 33, 62, 1);",
+    colorway:"#ffffff"
+  }
+
   var data1 = [trace];
-  Plotly.newPlot('chart1', data1);
+  Plotly.newPlot('chart1', data1, layout, {displayModeBar: false, responsive: true});
 }
 
 

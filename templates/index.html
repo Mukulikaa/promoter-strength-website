@@ -21,6 +21,7 @@
                     <br><br>
                     <div>
                         <form action="{{url_for('index')}}" method="POST">
+                            {{ form.csrf_token }}
                             <div class="promoter-input" id="select-yes">
                                 {{ form.epd_name.label }}
                                 {{ form.epd_name }}
@@ -29,7 +30,7 @@
                                 {{ form.nucleotide.label }}
                                 {{ form.nucleotide }} 
                             </div><br>
-                            <input class="btn btn-sm submit-button" type="submit" id="submit" value="Submit">
+                            {{ form.submit }}
                         </form>
                     </div>
                 </div>
@@ -39,7 +40,7 @@
             <div class="row">
                 <div class="col">
                     <h1>Results</h1>
-                    <h5>Your promoter sequence: </h5>
+                    <h5>Your promoter sequence: {{ data }}</h5>
                     <h5>Raw promoter score: </h5>
                     <h5>Promoter score normalized by TDH3: </h5><br>
                     <canvas id="chart"></canvas><br><br>

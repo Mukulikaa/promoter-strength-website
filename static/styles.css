@@ -35,7 +35,20 @@ body{
     background-color: rgba(15, 52, 96, 1);
 }
 
-#jscharts{
+#submit{
+    background-color: rgba(15, 52, 96, 1);
+    border: black;
+}
+
+#chart{
+    width: 90%;
+    height: 400px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(22, 33, 62, 1);
+}
+
+#chart1{
     width: 90%;
     height: 400px;
     margin: auto;
