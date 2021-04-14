@@ -2,6 +2,8 @@ var ctx = document.getElementById('chart').getContext('2d');
 
 var labels, datapoints, scores;
 
+var myScore = document.getElementById("hidden").value
+
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 40},
     width = 900 - margin.left - margin.right,
@@ -31,9 +33,8 @@ d3.csv('static/histogram-data.csv', function(promoters){
 });
 
 
-
 function makeChart(labels, datapoints){
-  var thresholdValue = 5;
+  var thresholdValue = myScore;
   var thresholdHighArray = new Array(18).fill(thresholdValue);
     var data = {
         labels: labels,
@@ -105,8 +106,8 @@ function makeHistogram(x){
     paper_bgcolor:" rgba(22, 33, 62, 1);",
     annotations:[
       {text: 'Your Promoter',
-      x: 7.56,
-      y: 100},
+      x: myScore,
+      y: 50},
     ]
   }
 

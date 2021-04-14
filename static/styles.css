@@ -38,6 +38,7 @@ body{
 #submit{
     background-color: rgba(15, 52, 96, 1);
     border: black;
+    color: aliceblue;
 }
 
 #chart{
