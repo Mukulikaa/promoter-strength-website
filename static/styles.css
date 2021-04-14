@@ -55,3 +55,21 @@ body{
     padding: 10px;
     background-color: rgba(22, 33, 62, 1);
 }
+
+.jumbotron{
+    background-color:  rgba(15, 52, 96, 1) !important;
+}
+
+.hero-image{
+    background-image: url('hero-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(15, 52, 96, 1) ;
+    background-blend-mode: multiply;
+}
+
+.footer{
+    padding-top: 20px;
+    text-align: center;
+    color: aliceblue;
+}

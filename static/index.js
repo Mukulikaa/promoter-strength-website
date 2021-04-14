@@ -33,20 +33,46 @@ d3.csv('static/histogram-data.csv', function(promoters){
 
 
 function makeChart(labels, datapoints){
+  var thresholdValue = 5;
+  var thresholdHighArray = new Array(18).fill(thresholdValue);
     var data = {
         labels: labels,
         datasets: [{
           label: 'Promoter Score',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
+          color: 'rgba(233, 69, 96, 1)',
           data: datapoints,
+        },{
+          label: 'Your Promoter',
+          borderColor: '#000',
+          color:'#000',
+          backgroundColor: '#000',
+          data: thresholdHighArray,
+          
         }]
       };
     
     var config = {
         type: 'line',
         data,
-        options: {}
+        options: {
+          plugins: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Scores of Standard Promoters',
+                padding: {
+                  top: 10,
+                  bottom: 30
+                },
+                font: {
+                  size: 20,
+                  family: "'Poppins','sans-serif'"
+                }
+            },
+          },
+        }
       };
     
     var myChart = new Chart(
@@ -69,12 +95,19 @@ function makeHistogram(x){
     title: {
       text:'Frequency Distribution',
       font: {
-        color: 'rgba(233, 69, 96, 1)'
-      }},
+        family: "'Poppins','sans-serif'",
+        color: '#6c757d',
+        size: 20
+      }
+    },
     bargap: 0.01,
     plot_bgcolor:"rgba(22, 33, 62, 1);",
     paper_bgcolor:" rgba(22, 33, 62, 1);",
-    colorway:"#ffffff"
+    annotations:[
+      {text: 'Your Promoter',
+      x: 7.56,
+      y: 100},
+    ]
   }
 
   var data1 = [trace];
