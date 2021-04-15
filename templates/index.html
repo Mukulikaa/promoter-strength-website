@@ -29,7 +29,7 @@
                             <div class="promoter-input" id="select-yes">
                                 {{ form.epd_name.label }}
                                 <br>
-                                {{ form.epd_name(size=40) }}
+                                {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()") }}
                                 {% if form.epd_name.errors %}
                                     {% for error in form.epd_name.errors %}
                                     <p>{{ error }}</p>
@@ -39,7 +39,7 @@
                             <div class="promoter-input" id="select-no">
                                 {{ form.nucleotide.label }}
                                 <br>
-                                {{ form.nucleotide(size=40) }} 
+                                {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()") }} 
                                 {% if form.nucleotide.errors %}
                                     {% for error in form.nucleotide.errors %}
                                     <p>{{ error }}</p>
