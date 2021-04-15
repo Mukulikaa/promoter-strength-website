@@ -14,10 +14,10 @@ def index():
     if form.validate_on_submit():
         if (form.epd_name.data):
             data = form.epd_name.data
-            results = do_stuff('y', data)
+            results = do_stuff('y', data.upper())
         elif(form.nucleotide.data):
             data = form.nucleotide.data
-            results = do_stuff('n', data)
+            results = do_stuff('n', data.upper())
         return render_template(
             "result.html",
             form=form,
