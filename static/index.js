@@ -63,26 +63,72 @@ function makeChart(labels, datapoints){
             title: {
                 display: true,
                 text: 'Scores of Standard Promoters',
+                color: '#fff',
                 padding: {
                   top: 10,
                   bottom: 30
                 },
                 font: {
                   size: 20,
-                  family: "'Poppins','sans-serif'"
+                  family: "'Poppins','sans-serif'",
+                  weight: 'normal'
                 }
             },
+            legend:{
+              labels:{
+                color:'#fff',
+                font:{
+                  family:"'Poppins', sans-serif"
+                }
+              }
+            },
           },
+          scales: {
+            y: {
+                title:{
+                  display: true,
+                  text:"Scores",
+                  color:'#fff',
+                  font:{
+                    size:14,
+                    family:"'Poppins', sans-serif"
+                  }
+                },
+                ticks: {
+                    color: '#fff',
+                    font:{
+                      family:"'Poppins', sans-serif"
+                    }
+                },
+            },
+            x: {
+                title:{
+                  display: true,
+                  text:"Promoters",
+                  color:'#fff',
+                  font:{
+                    size:14,
+                    family:"'Poppins', sans-serif"
+                  }
+                },
+                ticks:{
+                    color: '#fff',
+                    font:{
+                      family:"'Poppins', sans-serif"
+                    }
+                },
+              }
+          }
         }
       };
-    
+
     var myChart = new Chart(
         ctx,
         config
     );
 }
 
-//
+//for histogram
 function makeHistogram(x){
   var trace = {
     x: x,
@@ -97,7 +143,7 @@ function makeHistogram(x){
       text:'Frequency Distribution',
       font: {
         family: "'Poppins','sans-serif'",
-        color: '#6c757d',
+        color: '#fff',
         size: 20
       }
     },
@@ -106,9 +152,35 @@ function makeHistogram(x){
     paper_bgcolor:" rgba(22, 33, 62, 1);",
     annotations:[
       {text: 'Your Promoter',
+        font:{
+          color:'#870077',
+          family:"'Poppins', sans-serif",
+          size: 15
+        },
+      arrowcolor:'#870077',
       x: myScore,
-      y: 50},
-    ]
+      y: 30},
+    ],
+    xaxis:{
+      title:{
+        text: 'Scores',
+        font:{
+          family:"'Poppins',sans-serif",
+          color:'#fff',
+          size: 14
+        }
+      },
+      tickfont:{
+        family:"'Poppins', sans-serif"
+      },
+      color:'#fff',
+    },
+    yaxis:{
+      color:'#fff',
+      tickfont:{
+        family:"'Poppins', sans-serif"
+      },
+    }
   }
 
   var data1 = [trace];
