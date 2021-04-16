@@ -7,7 +7,16 @@ e94560 = rgba(233, 69, 96, 1)
 
 body{
     background-color: rgba(26, 26, 46, 1) !important;
+    background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
     height: 100%;
+}
+
+.card-body{
+    background-color:rgba(26, 26, 46, 1);
 }
 
 .row{
@@ -74,4 +83,12 @@ body{
     text-align: center;
     color: aliceblue;
     font-family:'Poppins', sans-serif
+}
+
+#epd{
+    display: none;
+}
+
+#nucleo{
+    display: none;
 }

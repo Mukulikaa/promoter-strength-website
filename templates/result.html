@@ -16,57 +16,33 @@
         
     </head>
     <body>
-        <div class="container hero">
-            <div class="row">
-                <div class="col">
-                    <div class="jumbotron jumbotron-fluid hero-image">
-                        <div class="container">
-                          <h1 class="display-4">Promoter Strength</h1>
-                          <p class="lead">Your go-to tool for predicting the strength of Saccharomyces cerevisiae promoters.</p>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+                <div class="container">
+                    <h1 class="display-4">Results</h1>
+                    <p class="lead">Your promoter score is {{ results[1] }}</p><br>
+                    <p class="lead">Your promoter sequence is {{ results[0] }}</p>
+                    <p class="lead">Your promoter score normalized by TDH3 is {{ results[2] }}</p>
+                    <input type="hidden" value="{{ results[1] }}" id="hidden" />
+                </div>
+                <div class="container results">
+                    <div class="row">
+                        <div class="col">
+                            <canvas id="chart"></canvas><br><br>
+                            <div id="chart1"></div>
                         </div>
-                      </div>
-                    <br><br>
-                    <div>
-                        <form action="{{url_for('index')}}" method="POST">
-                            {{ form.csrf_token }}
-                            <div class="promoter-input" id="select-yes">
-                                {{ form.epd_name.label }}
-                                <br>
-                                {{ form.epd_name(size=40) }}
-                            </div><br>
-                            <div class="promoter-input" id="select-no">
-                                {{ form.nucleotide.label }}
-                                <br>
-                                {{ form.nucleotide(size=40) }} 
-                            </div><br>
-                            {{ form.submit }}
-                        </form>
                     </div>
                 </div>
             </div>
-        </div><br><br>
-        <div class="container results">
-            <div class="row">
-                <div class="col">
-                    <h1>Results</h1>
-                    <h5>Your promoter sequence: {{ results[0] }}</h5>
-                    <h5>Raw promoter score: {{ results[1] }} </h5>
-                    <h5>Promoter score normalized by TDH3: {{ results[2] }} </h5><br>
-                    <input type="hidden" value="{{ results[1] }}" id="hidden" />
-                    <canvas id="chart"></canvas><br><br>
-                    <div id="chart1"></div>
-                </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <p>&COPY; 2021</p>
-            </div>
-        </footer>
+        
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <script src="{{ url_for('static', filename='result.js') }}"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
