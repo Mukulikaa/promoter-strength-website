@@ -15,54 +15,79 @@
         <title>Promoter Strength</title>
     </head>
     <body>
-        <div class="container hero">
-            <div class="row">
+        <section class="pt-5 pb-5 bg-dark position-relative" style="min-height:100vh; background-image: url(https://media.gettyimages.com/photos/biotechnology-molecular-structure-and-network-picture-id1280246102?k=6&m=1280246102&s=612x612&w=0&h=JfFlr-PXEH13f_mXkvKwoUysHnu1X7e79N4ifH7frR4=); background-size: cover;">
+            <div class="bg-overlay"></div>
+            <div class="container pt-5 pb-5 position-relative">
+              <div class="row d-flex justify-content-between pt-lg-5 align-items-center">
+                <div class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0">
+                  <h1 class="display-3 font-weight-bold text-white aos-init aos-animate" data-aos="fade-up">Know Your Promoter Power</h1>
+                  <div class="my-4 aos-init" data-aos="fade-up">
+                    <p class="lead text-white">Your go-to tool for finding out your promoter strength!</p>
+                  </div>
+                </div>
                 <div class="col">
-                    <div class="jumbotron jumbotron-fluid hero-image">
-                        <div class="container">
-                          <h1 class="display-4">Promoter Strength</h1>
-                          <p class="lead">Your go-to tool for predicting the strength of Saccharomyces cerevisiae promoters.</p>
+                  <div class="row justify-content-center">
+                    <div class="col-xl-8 col-md-10">
+                      <form action="{{url_for('index')}}" method="POST" class="position-relative d-block aos-init aos-animate" data-aos="fade-up">
+                        {{ form.csrf_token }}
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="form-group mb-1">
+                                <label class="text-white">Is your promoter a standard promoter?</label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group rounded bg-white p-2 border">
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="course-radio-beginner-1" name="course-radio-1" class="custom-control-input">
+                                  <label class="custom-control-label" for="course-radio-beginner-1">Yes</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group rounded bg-white p-2 border">
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="course-radio-advanced-1" name="course-radio-1" class="custom-control-input">
+                                  <label class="custom-control-label" for="course-radio-advanced-1">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    <br><br>
-                    <div>
-                        <form action="{{url_for('index')}}" method="POST">
-                            {{ form.csrf_token }}
-                            <div class="promoter-input" id="select-yes">
-                                {{ form.epd_name.label }}
-                                <br>
-                                {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()") }}
+                        <div class="form-group">
+                            {{ form.epd_name.label }}
+                            {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="Type your name") }}
                                 {% if form.epd_name.errors %}
                                     {% for error in form.epd_name.errors %}
                                     <p>{{ error }}</p>
                                     {% endfor %}
-                                {% endif %}
-                            </div><br>
-                            <div class="promoter-input" id="select-no">
-                                {{ form.nucleotide.label }}
-                                <br>
-                                {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()") }} 
+                                {% endif %}>
+                        </div>
+                        <div class="form-group">
+                            {{ form.nucleotide.label }}
+                            {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="Type your name") }}
                                 {% if form.nucleotide.errors %}
                                     {% for error in form.nucleotide.errors %}
                                     <p>{{ error }}</p>
                                     {% endfor %}
-                                {% endif %}
-                            </div><br>
-                            {{ form.submit }}
-                        </form>
+                                {% endif %}>
+                        </div>
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-lg btn-success btn-block mb-2") }}
+                        </div>
+                      </form>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div><br><br>
-        <footer class="footer">
-            <div class="container">
-                <p>&COPY; 2021</p>
-            </div>
-        </footer>
+              </div>
+              </div>
+              </section>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
