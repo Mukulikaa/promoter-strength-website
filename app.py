@@ -31,7 +31,6 @@ def index():
 def result():
     form = InputForm()
     if form.validate_on_submit():
-        results=[0,1,2]
         if (form.epd_name.data):
             data = form.epd_name.data
             results = do_stuff('y', data.upper())
@@ -40,6 +39,7 @@ def result():
             results = do_stuff('n', data.upper())
         return render_template(
             "result.html",
+            form=form,
             results=results)
     return render_template(
         "index.html",

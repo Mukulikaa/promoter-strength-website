@@ -15,6 +15,20 @@
         <title>Promoter Strength</title>
     </head>
     <body>
+          {% if form.epd_name.errors %}
+          <div class='alert alert-warning' role='alert'>
+            {% for error in form.epd_name.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% if form.nucleotide.errors %}
+          <div class='alert alert-warning' role='alert'>
+              {% for error in form.nucleotide.errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+          </div>
+          {% endif %}
         <section class="pt-5 pb-5 bg-dark position-relative">
             <div class="bg-overlay"></div>
             <div class="container pt-5 pb-5 position-relative">
@@ -58,20 +72,10 @@
                         <div class="form-group" id="epd">
                             {{ form.epd_name.label(class="labels") }}
                             {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="RNR1_1") }}
-                                {% if form.epd_name.errors %}
-                                    {% for error in form.epd_name.errors %}
-                                    <p>{{ error }}</p>
-                                    {% endfor %}
-                                {% endif %}
                         </div>
                         <div class="form-group" id="nucleo">
                             {{ form.nucleotide.label(class="labels") }}
                             {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="TAATTGAA...") }}
-                                {% if form.nucleotide.errors %}
-                                    {% for error in form.nucleotide.errors %}
-                                    <p>{{ error }}</p>
-                                    {% endfor %}
-                                {% endif %}
                         </div>
                         <div class="form-group text-center">
                             {{ form.submit(class="btn btn-lg btn-success btn-block mb-2") }}
