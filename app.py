@@ -39,7 +39,6 @@ def result():
             results = do_stuff('n', data.upper())
         return render_template(
             "result.html",
-            form=form,
             results=results)
     return render_template(
         "index.html",
