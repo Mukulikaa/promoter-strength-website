@@ -15,26 +15,26 @@
         <title>Promoter Strength</title>
     </head>
     <body>
-        <section class="pt-5 pb-5 bg-dark position-relative" style="min-height:100vh; background-image: url(https://media.gettyimages.com/photos/biotechnology-molecular-structure-and-network-picture-id1280246102?k=6&m=1280246102&s=612x612&w=0&h=JfFlr-PXEH13f_mXkvKwoUysHnu1X7e79N4ifH7frR4=); background-size: cover;">
+        <section class="pt-5 pb-5 bg-dark position-relative">
             <div class="bg-overlay"></div>
             <div class="container pt-5 pb-5 position-relative">
               <div class="row d-flex justify-content-between pt-lg-5 align-items-center">
                 <div class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0">
                   <h1 class="display-3 font-weight-bold text-white aos-init aos-animate" data-aos="fade-up">Know Your Promoter Power</h1>
                   <div class="my-4 aos-init" data-aos="fade-up">
-                    <p class="lead text-white">Your go-to tool for predicting the strength of Saccharomyces cerevisiae promoters.</p>
+                    <p class="lead text-white">Your go-to tool for predicting the strength of <i>Saccharomyces cerevisiae</i> promoters.</p>
                   </div>
                 </div>
                 <div class="col">
                   <div class="row justify-content-center">
                     <div class="col-xl-8 col-md-10">
-                      <form action="{{url_for('index')}}" method="POST" class="position-relative d-block aos-init aos-animate" data-aos="fade-up">
+                      <form action="{{url_for('result')}}" method="POST" class="position-relative d-block aos-init aos-animate" data-aos="fade-up">
                         {{ form.csrf_token }}
                         <div class="form-group">
                           <div class="row">
                             <div class="col-12">
                               <div class="form-group mb-1">
-                                <label class="text-white">Does your promoter exist in the EPD database?</label>
+                                <label class="labels">Does your promoter exist in the EPD database?</label>
                               </div>
                             </div>
                             <div class="col">
@@ -56,7 +56,7 @@
                           </div>
                         </div>
                         <div class="form-group" id="epd">
-                            {{ form.epd_name.label }}
+                            {{ form.epd_name.label(class="labels") }}
                             {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="RNR1_1") }}
                                 {% if form.epd_name.errors %}
                                     {% for error in form.epd_name.errors %}
@@ -65,7 +65,7 @@
                                 {% endif %}
                         </div>
                         <div class="form-group" id="nucleo">
-                            {{ form.nucleotide.label }}
+                            {{ form.nucleotide.label(class="labels") }}
                             {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="TAATTGAA...") }}
                                 {% if form.nucleotide.errors %}
                                     {% for error in form.nucleotide.errors %}

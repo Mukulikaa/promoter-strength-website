@@ -18,23 +18,24 @@
     <body>
         <!-- Page Content -->
         <div class="container">
-            <div class="card border-0 shadow my-5">
-            <div class="card-body p-5">
-                <div class="container">
+            <div class="card border-0 shadow my-5 results">
+            <div class="card-body">
+                <div class="container headings">
                     <h1 class="display-4">Results</h1>
                     <p class="lead">Your promoter score is {{ results[1] }}</p><br>
                     <p class="lead">Your promoter sequence is {{ results[0] }}</p>
                     <p class="lead">Your promoter score normalized by TDH3 is {{ results[2] }}</p>
-                    <input type="hidden" value="{{ results[1] }}" id="hidden" />
+                    <input type="hidden" value="{{ results[1] }}" id="hidden" /><br><br>
                 </div>
-                <div class="container results">
-                    <div class="row">
-                        <div class="col">
-                            <canvas id="chart"></canvas><br><br>
-                            <div id="chart1"></div>
-                        </div>
-                    </div>
+                <div class="container">
+                    <div class="chart-container">
+                        <canvas id="chart"></canvas>
+                    </div><br><br>
+                    <div class="chart-container">
+                        <div id="chart1"></div>
+                    </div><br><br>
                 </div>
+                <a class="btn btn-lg btn-success btn-block mb-2" id="home-button" href="{{url_for('index')}}" >Take me back home</a>
             </div>
             </div>
         </div>
