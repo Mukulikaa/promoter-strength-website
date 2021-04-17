@@ -9,7 +9,7 @@ def validate_chars(form, field):
 
 class InputForm(FlaskForm):
     epd_name = StringField(
-        'If your promoter exists in the EPD database, please enter the promoter name from EPD: ',
+        'Please enter the promoter name from EPD ',
         [Optional(),
         AnyOf(values=['TDH3_1', 'CCW12_1', 'PGK1_1', 'HHF2_1', 'TEF1_1', 'TEF2_1', 'HHF1_1', 'HTB2_1', 'RPL18B_1', 'ALD6_1', 'PAB1_1',
 	                'RET2_1', 'RNR1_1', 'SAC6_1', 'RNR2_1', 'POP6_1', 'RAD27_1', 'PSP2_1','tdh3_1', 'ccw12_1', 'pgk1_1', 'hhf2_1', 'tef1_1', 'tef2_1', 'hhf1_1', 'htb2_1', 'rpl18b_1', 'ald6_1', 'pab1_1',
@@ -18,7 +18,7 @@ class InputForm(FlaskForm):
     )
 
     nucleotide = StringField(
-        "Don't know EPD name? Enter 60 nucleotide sequence: ",
+        "Please enter the 60 nucleotide sequence ",
         [Optional(),
         Length(min=60, max=60, message=('Incorrect Sequence!')),
         validate_chars])

@@ -7,7 +7,31 @@ e94560 = rgba(233, 69, 96, 1)
 
 body{
     background-color: rgba(26, 26, 46, 1) !important;
+    background: url('hero-image.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
     height: 100%;
+    font-family:'Poppins', sans-serif !important;
+    background-blend-mode: multiply;
+}
+
+section{
+    background-color: rgba(26, 26, 46, 1) !important;
+    font-family:'Poppins', sans-serif !important;
+    min-height: 100vh; 
+    background-image: url('hero-image.jpg'); 
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.card-body{
+    background-color:rgba(26, 26, 46, 1);
+}
+
+.headings{
+    color: aliceblue;
 }
 
 .row{
@@ -26,9 +50,15 @@ body{
     
 }
 
-.results{
+.card .results{
+    background-color: rgba(26, 26, 46, 1);
     color: rgba(233, 69, 96, 1);
     font-family: 'Poppins', sans-serif;
+}
+
+.labels{
+    color: white;
+    font-weight: bold;
 }
 
 .submit-button{
@@ -41,24 +71,22 @@ body{
     color: aliceblue;
 }
 
+#home-button{
+    background-color: rgba(15, 52, 96, 1);
+    border: black;
+    color: aliceblue;
+}
+
 #chart{
-    width: 90%;
-    height: 400px;
-    margin: auto;
-    padding: 10px;
-    background-color: rgba(22, 33, 62, 1);
+    background-color: rgba(26, 26, 46, 1);
 }
 
 #chart1{
-    width: 90%;
-    height: 400px;
-    margin: auto;
-    padding: 10px;
-    background-color: rgba(22, 33, 62, 1);
+    background-color: rgba(26, 26, 46, 1);
 }
 
 .jumbotron{
-    background-color:  rgba(22, 33, 62, 1) !important;
+    background-color:  rgba(26, 26, 46, 1) !important;
 }
 
 /*.hero-image{
@@ -74,4 +102,17 @@ body{
     text-align: center;
     color: aliceblue;
     font-family:'Poppins', sans-serif
+}
+
+#epd{
+    display: none;
+}
+
+#nucleo{
+    display: none;
+}
+
+.chart-container{
+    position: relative; 
+    height:60vh; width:75vw
 }

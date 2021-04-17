@@ -26,3 +26,21 @@ def index():
     return render_template(
         "index.html",
         form=form)
+
+@app.route("/result", methods=['GET','POST'])
+def result():
+    form = InputForm()
+    if form.validate_on_submit():
+        results=[0,1,2]
+        if (form.epd_name.data):
+            data = form.epd_name.data
+            results = do_stuff('y', data.upper())
+        elif(form.nucleotide.data):
+            data = form.nucleotide.data
+            results = do_stuff('n', data.upper())
+        return render_template(
+            "result.html",
+            results=results)
+    return render_template(
+        "index.html",
+        form=form)

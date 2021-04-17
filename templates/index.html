@@ -15,41 +15,68 @@
         <title>Promoter Strength</title>
     </head>
     <body>
-        <div class="container hero">
-            <div class="row">
+        <section class="pt-5 pb-5 bg-dark position-relative">
+            <div class="bg-overlay"></div>
+            <div class="container pt-5 pb-5 position-relative">
+              <div class="row d-flex justify-content-between pt-lg-5 align-items-center">
+                <div class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0">
+                  <h1 class="display-3 font-weight-bold text-white aos-init aos-animate" data-aos="fade-up">Know Your Promoter Power</h1>
+                  <div class="my-4 aos-init" data-aos="fade-up">
+                    <p class="lead text-white">Your go-to tool for predicting the strength of <i>Saccharomyces cerevisiae</i> promoters.</p>
+                  </div>
+                </div>
                 <div class="col">
-                    <div class="jumbotron jumbotron-fluid hero-image">
-                        <div class="container">
-                          <h1 class="display-4">Promoter Strength</h1>
-                          <p class="lead">Your go-to tool for predicting the strength of Saccharomyces cerevisiae promoters.</p>
+                  <div class="row justify-content-center">
+                    <div class="col-xl-8 col-md-10">
+                      <form action="{{url_for('result')}}" method="POST" class="position-relative d-block aos-init aos-animate" data-aos="fade-up">
+                        {{ form.csrf_token }}
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="form-group mb-1">
+                                <label class="labels">Does your promoter exist in the EPD database?</label>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group rounded bg-white p-2 border">
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="decision-1" name="decision" class="custom-control-input" onclick="showEPD(this)">
+                                  <label class="custom-control-label" for="decision-1">Yes</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group rounded bg-white p-2 border">
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" id="decision-2" name="decision" class="custom-control-input" onclick="showNucleo(this)">
+                                  <label class="custom-control-label" for="decision-2">No</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    <br><br>
-                    <div>
-                        <form action="{{url_for('index')}}" method="POST">
-                            {{ form.csrf_token }}
-                            <div class="promoter-input" id="select-yes">
-                                {{ form.epd_name.label }}
-                                <br>
-                                {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()") }}
+                        <div class="form-group" id="epd">
+                            {{ form.epd_name.label(class="labels") }}
+                            {{ form.epd_name(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="RNR1_1") }}
                                 {% if form.epd_name.errors %}
                                     {% for error in form.epd_name.errors %}
                                     <p>{{ error }}</p>
                                     {% endfor %}
                                 {% endif %}
-                            </div><br>
-                            <div class="promoter-input" id="select-no">
-                                {{ form.nucleotide.label }}
-                                <br>
-                                {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()") }} 
+                        </div>
+                        <div class="form-group" id="nucleo">
+                            {{ form.nucleotide.label(class="labels") }}
+                            {{ form.nucleotide(size=40, oninput="this.value = this.value.toUpperCase()", class="form-control form-control-lg", placeholder="TAATTGAA...") }}
                                 {% if form.nucleotide.errors %}
                                     {% for error in form.nucleotide.errors %}
                                     <p>{{ error }}</p>
                                     {% endfor %}
                                 {% endif %}
-                            </div><br>
-                            {{ form.submit }}
-                        </form>
+                        </div>
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-lg btn-success btn-block mb-2") }}
+                        </div>
+                      </form>
                     </div>
                 </div>
             </div>
