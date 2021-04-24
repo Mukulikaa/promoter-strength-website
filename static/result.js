@@ -36,9 +36,9 @@ function makeChart(labels, datapoints){
           data: datapoints,
         },{
           label: 'Your Promoter',
-          borderColor: '#000',
-          color:'#000',
-          backgroundColor: '#000',
+          borderColor: '#fff',
+          color:'#fff',
+          backgroundColor: '#fff',
           data: thresholdHighArray,
           
         }]
@@ -53,7 +53,7 @@ function makeChart(labels, datapoints){
           plugins: {
             title: {
                 display: true,
-                text: 'Scores of Standard Promoters',
+                text: 'Comparison with Lee et al. promoters',
                 color: '#fff',
                 padding: {
                   top: 10,
@@ -78,7 +78,7 @@ function makeChart(labels, datapoints){
             y: {
                 title:{
                   display: true,
-                  text:"Scores",
+                  text:"-49 to 10 Scores",
                   color:'#fff',
                   font:{
                     size:14,
@@ -125,13 +125,13 @@ function makeHistogram(x){
     x: x,
     type: 'histogram',
       marker: {
-        color: 'rgb(242, 141, 158)',
+        color: '#fff',
     }
   };
 
   var layout = {
     title: {
-      text:'Frequency Distribution',
+      text:'Comparison with 5117 S. cerevisiae promoters',
       font: {
         family: "'Poppins','sans-serif'",
         color: '#fff',
@@ -140,21 +140,21 @@ function makeHistogram(x){
     },
     bargap: 0.01,
     plot_bgcolor:"rgba(22, 33, 62, 1);",
-    paper_bgcolor:" rgba(22, 33, 62, 1);",
+    paper_bgcolor:"rgba(22, 33, 62, 1);",
     annotations:[
       {text: 'Your Promoter',
         font:{
-          color:'#870077',
+          color:'rgba(233, 69, 96, 1)',
           family:"'Poppins', sans-serif",
           size: 15
         },
-      arrowcolor:'#870077',
+      arrowcolor:'rgba(233, 69, 96, 1)',
       x: myScore,
       y: 30},
     ],
     xaxis:{
       title:{
-        text: 'Scores',
+        text: 'Promoter Scores',
         font:{
           family:"'Poppins',sans-serif",
           color:'#fff',
