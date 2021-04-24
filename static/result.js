@@ -131,7 +131,8 @@ function makeHistogram(x){
 
   var layout = {
     title: {
-      text:'Comparison with 5117 S. cerevisiae promoters',
+      text:"EPD Promoters Comparison",
+      xref:"paper",
       font: {
         family: "'Poppins','sans-serif'",
         color: '#fff',
