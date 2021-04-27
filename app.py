@@ -3,10 +3,11 @@ from flask import (Flask, url_for,
     redirect)
 from forms import InputForm
 from terminal_app import do_stuff
+import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'SECRET_KEY'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 @app.route("/", methods=['GET','POST'])
 def index():
