@@ -3,6 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" 
+         content="Promoter strength promoters Saccharomyces cerevisiae yeast epd QPromoters: Sequence based prediction of ">
+        <meta name="description" 
+         content="Know your promoter strength with your go-to tool for predicting the strength of Saccharomyces cerevisiae promoters.">
         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         
@@ -29,9 +33,9 @@
               {% endfor %}
           </div>
           {% endif %}
-        <section class="pt-5 position-relative">
+        <section class="pt-2 position-relative">
             <div class="bg-overlay"></div>
-            <div class="container pt-5 pb-5 position-relative">
+            <div class="container pb-5 position-relative">
               <div class="row d-flex justify-content-between pt-lg-5 align-items-center">
                 <div class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0">
                   <h1 class="display-3 font-weight-bold text-white aos-init aos-animate" data-aos="fade-up">
@@ -89,35 +93,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-
-        <div class="pb-5">
-          <div class="container">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-12 col-md-12">
-                <h2 data-aos="fade-up" class="text-white aos-init">About</h2>
-                <p class="text-h3 text-white t-3 lead aos-init" data-aos="fade-up">We present a theoretical model to describe the relationship between promoter strength and nucleotide sequence in <i>Saccharomyces cerevisiae</i>. 
-                  We infer from our analysis that the -49 to 10 sequence with respect to the Transcription Start Site
-                   represents the minimal region that can be used to predict the promoter strength. This tool takes
-                    advantage of this fact to quickly quantify the strength of the promoters. See our <a href="https://www.biorxiv.org/content/10.1101/2021.04.27.441621v1">publication</a>
-                     for more information.</p>
+            <div class="pb-5">
+              <div class="container">
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-12 col-md-12 pt-5">
+                    <h3 data-aos="fade-up" class="text-white aos-init">Cite</h3>
+                    <p class="text-h5 text-white t-3 lead aos-init" data-aos="fade-up" style="font-size: 1rem; padding-right: 3rem">QPromoters: Sequence based prediction of promoter strength in Saccharomyces cerevisiae Devang Haresh Liya, 
+                      Mirudula Elanchezhian, Mukulika Pahari, Nithishwer Mouroug Anand, Shivani Suresh, Nivedha Balaji,
+                       Ashwin Kumar Jainarayanan bioRxiv 2021.04.27.441621; doi: <a href="https://doi.org/10.1101/2021.04.27.441621">https://doi.org/10.1101/2021.04.27.441621</a></p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
         </div>
-
-        <div class="pb-5">
-          <div class="container">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-12 col-md-12">
-                <h2 data-aos="fade-up" class="text-white aos-init">Cite</h2>
-                <p class="text-h3 text-white t-3 lead aos-init" data-aos="fade-up">QPromoters: Sequence based prediction of promoter strength in Saccharomyces cerevisiae Devang Haresh Liya, 
-                  Mirudula Elanchezhian, Mukulika Pahari, Nithishwer Mouroug Anand, Shivani Suresh, Nivedha Balaji,
-                   Ashwin Kumar Jainarayanan bioRxiv 2021.04.27.441621; doi: <a href="https://doi.org/10.1101/2021.04.27.441621">https://doi.org/10.1101/2021.04.27.441621</a></p>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="footer text-white">
