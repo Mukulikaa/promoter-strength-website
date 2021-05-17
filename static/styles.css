@@ -116,3 +116,14 @@ section{
     position: relative; 
     height:60vh; width:75vw
 }
+
+@media screen and (min-width: 430px) {
+    .first-part{
+        padding-left: 4rem;
+    }
+
+    .cite{
+        text-align: justify;
+        padding-right: 6.5rem;
+    }
+}

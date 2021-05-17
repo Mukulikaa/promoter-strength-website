@@ -3,16 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" 
+         content="Promoter strength promoters Saccharomyces cerevisiae yeast epd QPromoters: Sequence based prediction of ">
+        <meta name="description" 
+         content="Know your promoter strength with your go-to tool for predicting the strength of Saccharomyces cerevisiae promoters.">
         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
 
-        <title>Promoter Strength</title>
+        <title>QPromoters</title>
     </head>
     <body>
           {% if form.epd_name.errors %}
@@ -29,12 +33,17 @@
               {% endfor %}
           </div>
           {% endif %}
-        <section class="pt-5 pb-5 bg-dark position-relative">
+        <section class="pt-2 position-relative">
             <div class="bg-overlay"></div>
-            <div class="container pt-5 pb-5 position-relative">
-              <div class="row d-flex justify-content-between pt-lg-5 align-items-center">
+            <div class="container pb-5 position-relative">
+              <div class="row d-flex justify-content-between pt-lg-5 align-items-center first-part">
                 <div class="col-xl-5 col-lg-6 col-md-7 text-center text-lg-left mb-5 mb-lg-0">
-                  <h1 class="display-3 font-weight-bold text-white aos-init aos-animate" data-aos="fade-up">Know Your Promoter Power</h1>
+                  <h1 class="display-4 font-weight-bold text-white aos-init" data-aos="fade-up">
+                    <div class="text-center">
+                      <img src="{{ url_for('static', filename='JUST_LOGO_v2_40.png') }}" height="150px" width="auto">
+                    </div>
+                    QPromoters
+                  </h1></h1>
                   <div class="my-4 aos-init" data-aos="fade-up">
                     <p class="lead text-white">Your go-to tool for predicting the strength of <i>Saccharomyces cerevisiae</i> promoters.</p>
                   </div>
@@ -42,7 +51,7 @@
                 <div class="col">
                   <div class="row justify-content-center">
                     <div class="col-xl-8 col-md-10">
-                      <form action="{{url_for('result')}}" method="POST" class="position-relative d-block aos-init aos-animate" data-aos="fade-up">
+                      <form action="{{url_for('result')}}" method="POST" class="position-relative d-block aos-init" data-aos="fade-up">
                         {{ form.csrf_token }}
                         <div class="form-group">
                           <div class="row">
@@ -84,7 +93,36 @@
                     </div>
                 </div>
             </div>
-        </div><br><br>
+            <div class="pb-5">
+              <div class="container">
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-12 col-md-12 pt-5">
+                    <h3 data-aos="fade-up" class="text-white aos-init">Cite</h3>
+                    <p class="text-h5 text-white t-3 lead aos-init cite" data-aos="fade-up" style="font-size: 1rem">QPromoters: Sequence based prediction of promoter strength in Saccharomyces cerevisiae Devang Haresh Liya, 
+                      Mirudula Elanchezhian, Mukulika Pahari, Nithishwer Mouroug Anand, Shivani Suresh, Nivedha Balaji,
+                       Ashwin Kumar Jainarayanan bioRxiv 2021.04.27.441621; doi: <a href="https://doi.org/10.1101/2021.04.27.441621">https://doi.org/10.1101/2021.04.27.441621</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="footer text-white">
+          <div class="bg-dark">
+            <div class="container">  
+              <div class="row f-flex justify-content-center">
+                <div class="col text-center  text-secondary my-1">
+                  <p class="mt-2  text-white"> © Copyright 2021 • All Rights Reserved |
+                    <a href="mailto: help.qpromoters@protonmail.com">Contact</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </section>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -93,6 +131,12 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+              })
+        </script>
     </body>
 </html>
 
